@@ -6,7 +6,7 @@ import sys
 # cate_path = './daojiadata/cateList.txt'
 item_path = './daojiadata/items.txt'
 approval_path = './daojiadata/approval_number.txt'
-
+product_xlsx = './daojiadata/product.xlsx'
 dic = dict()
 with open(item_path, 'r', encoding='utf-8') as f:
     for line1 in f:
@@ -47,5 +47,5 @@ with open(approval_path, 'r', encoding='utf-8') as f:
 lst = dic.values()
 
 df = json_normalize(lst)
-filename=sys.argv[1]
-df.to_excel(filename)
+# filename=sys.argv[1]
+df.to_excel(product_xlsx)

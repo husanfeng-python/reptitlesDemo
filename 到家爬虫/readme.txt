@@ -2,3 +2,6 @@
 
 运行 start_download.sh
 
+window 运行
+pip isntall mitmproxy
+
