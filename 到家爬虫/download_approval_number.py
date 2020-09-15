@@ -5,7 +5,6 @@ import time
 from selenium import webdriver
 import sys
 
-
 mobile_emulation = {'deviceName': 'iPhone 6'}
 options = webdriver.ChromeOptions()
 # port=sys.argv[1]
@@ -17,11 +16,12 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 browser = webdriver.Chrome(chrome_options=options)
 
+
 # url = 'https://daojia.jd.com/html/index.html#goodsDetails/storeId:11645612/orgCode:74421/skuId:2002969218/spuId:undefined'
 
 
 def find_tag(browser):
-    lst = ['批准文号','注册证号','执行标准']
+    lst = ['批准文号', '注册证号', '执行标准']
     els = browser.find_elements_by_tag_name('strong')
     approval_number = '无批准文号'
     for item in lst:
@@ -40,10 +40,11 @@ def find_tag(browser):
                                 approval_number = approval_number_container.text
                                 break
                     finally:
-                            pass
+                        pass
                     break
             break
     return approval_number
+
 
 def get_approval_number(url):
     browser.get(url)
@@ -62,7 +63,8 @@ with open('./daojiadata/items.txt', 'r', encoding='utf-8') as f:
         data = json.loads(line1)
         if not s.__contains__(data['skuId']):
             s.add(data['skuId'])
-            url = 'https://daojia.jd.com/html/index.html#goodsDetails/storeId:{}/orgCode:{}/skuId:{}/spuId:undefined'.format(data['storeId'],data['orgCode'],data['skuId'])
+            url = 'https://daojia.jd.com/html/index.html#goodsDetails/storeId:{}/orgCode:{}/skuId:{}/spuId:undefined'.format(
+                data['storeId'], data['orgCode'], data['skuId'])
         # lst.append(url)
         approval_number = get_approval_number(url)
         print(data['skuId'], approval_number, url)

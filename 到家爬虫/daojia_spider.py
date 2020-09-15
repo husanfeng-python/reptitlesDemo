@@ -31,7 +31,7 @@ if __name__ == '__main__':
     mobile_emulation = {'deviceName': 'iPhone 6'}
     options = webdriver.ChromeOptions()
     # port = sys.argv[1]
-    options.add_argument('--proxy-server=http://localhost:8888')
+    options.add_argument('--proxy-server=http://localhost:8880')
     options.add_experimental_option("mobileEmulation", mobile_emulation)
     options.add_argument("--test-type")
     options.add_argument("--ignore-certificate-errors")
