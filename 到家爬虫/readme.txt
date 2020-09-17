@@ -2,3 +2,7 @@
 
 运行 start_download.sh
 
+window 运行
+pip isntall mitmproxy
+
+mitmdump -s record_response.py -p 8880
