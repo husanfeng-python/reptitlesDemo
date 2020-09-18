@@ -40,7 +40,7 @@ if __name__ == '__main__':
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    browser = webdriver.Chrome(chrome_options=options)
+    browser = webdriver.Chrome(options=options)
     browser.get("https://daojia.jd.com/html/index.html#storeHome/storeId:11645612/orgCode:74421/needAddCart:0")
     # browser.implicitly_wait(4)
     time.sleep(6)
