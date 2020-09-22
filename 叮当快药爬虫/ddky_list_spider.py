@@ -6,6 +6,7 @@ import random
 import requests
 from pandas import json_normalize
 
+
 def generate_sign(params):
     keys = sorted([key for key in params])
     p = ''.join([key + params[key] for key in keys])

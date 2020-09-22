@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Description : 美团外卖H5页面销售数据解密
-from operator import itemgetter
+# from operator import itemgetter
 from pandas import json_normalize
 import json
-from itertools import product
-import io
+# from itertools import product
+# import io
 from fontTools.ttLib import TTFont
-import pandas as pd
-from openpyxl.workbook import Workbook
+# import pandas as pd
+# from openpyxl.workbook import Workbook
 
 
 # 解析字体文件 ，获取相应的字体映射关系
@@ -17,7 +17,7 @@ def getGlyphCoordinates():
     """
     获取字体轮廓坐标,手动修改key值为对应数字
     """
-    font = TTFont('meituan.woff')
+    font = TTFont('b62cfa94.woff')
     # font.saveXML("bd10f635.xml")
     glyfList = list(font['glyf'].keys())
     data = dict()
@@ -75,7 +75,7 @@ data = {
 
 
 def parseWoff():
-    font = TTFont('meituan.woff')
+    font = TTFont('b62cfa94.woff')
     glyfList = list(font['glyf'].keys())
     result = dict()
     for key in glyfList:
@@ -122,7 +122,7 @@ with open("meituandata/meituanData1.txt", 'r', encoding='utf-8') as f:
     d = load_dict1['data']['pageCategoryList'][0]['spuList']
     for item in d:
         productJson.append(item)
-# print(productJson)
+print(productJson)
 with open("meituandata/meituanData2.txt", 'r', encoding='utf-8') as f2:
     # data = f.read()
     # load_dict2 = json.loads(data)
@@ -154,6 +154,6 @@ for item in productJson:
 # productJson_new_sort = sorted(productJson_new, key=itemgetter('月售'))
 print(productJson_new)
 
-# df = json_normalize(productJson_new)
-# df.to_excel("product.xlsx")
+df = json_normalize(productJson_new)
+df.to_csv("20200921.csv")
 
