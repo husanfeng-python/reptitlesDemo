@@ -15,6 +15,7 @@ def extract_approval_number(html):
         return matchObj.group(1)
     return '匹配不成功'
 
+
 def request(flow):
     pass
 
@@ -84,4 +85,3 @@ def response(flow):
                         file.write('\n')
                         file.write('\n')
                         file.write('\n')
-
