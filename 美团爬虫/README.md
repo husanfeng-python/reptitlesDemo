@@ -1,5 +1,5 @@
 # 美团爬虫
-在Fiddler抓包工具下进行如下配置：
+## Fiddler抓包工具 Fiddlerscript下配置：
 ```
         if (oSession.fullUrl.Contains("openh5/poi/food"))
             {
@@ -30,4 +30,10 @@
                 file.close();
             }
 ```
+
+## 运行 meituan_final.py 整理数据
+```
+python meituan_final.py
+```
+
 

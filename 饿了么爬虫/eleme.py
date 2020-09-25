@@ -2,12 +2,6 @@
 # -*- coding: utf-8 -*-
 from pandas import json_normalize
 import json
-# from itertools import product
-# import io
-from fontTools.ttLib import TTFont
-
-# import pandas as pd
-# from openpyxl.workbook import Workbook
 
 productJson = []
 productJson_form = []

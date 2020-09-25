@@ -1,5 +1,5 @@
 # 饿了么爬虫
-在Fiddler抓包工具下进行如下配置：
+## 在Fiddler抓包工具下进行如下配置：
 ```
         // 饿了么截取response
         if (oSession.fullUrl.Contains("h5/mtop.venus.shopcategoryservice.getcategorydetail/"))
@@ -16,3 +16,8 @@
             file.close();
         }
 ```
+## 依次点击每个分类 
+>记录每个response,写到txt文件中
+
+## 整理数据
+>将每个response报文整理成我们需要的格式
